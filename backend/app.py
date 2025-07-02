@@ -5,7 +5,8 @@ import numpy as np
 import os
 app = Flask(__name__)
 template_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../frontend/templates'))
-app = Flask(__name__, template_folder=template_dir)
+static_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../frontend/static'))
+app = Flask(__name__, template_folder=template_dir,static_folder=static_dir)
 # Load model
 with open("emotiondetector.json", "r") as json_file:
     model = model_from_json(json_file.read())
