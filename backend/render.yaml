@@ -3,6 +3,7 @@ services:
     name: emotion-detector-backend
     env: python
     rootDir: backend
+    pythonVersion: "3.9.19"
     buildCommand: pip install -r requirements.txt
     startCommand: python app.py
     plan: free
