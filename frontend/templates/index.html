@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Emotion Detector</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body >
+<body>
   <div class="card">
-  <div class="upper">
-  <h1 class = "heading">Analyze Your Emotions</h1>
-  <button class ="button" onclick="startVideo()">Camera</button><br>
+    <div class="upper">
+      <h1 class="heading">Analyze Your Emotions</h1>
+      <button class="button" onclick="startVideo()">Camera</button><br>
+    </div>
+    <img class="videobox" id="videoFeed" style="display:none;" />
   </div>
-  <img class = "videobox" id="videoFeed"  style="display:none;"/>
-  </div>
-  
+
   <script>
     function startVideo() {
-      document.getElementById('videoFeed').style.display = 'block';
-      document.getElementById('videoFeed').src = "{{ url_for('video') }}";
+      const video = document.getElementById('videoFeed');
+      video.style.display = 'block';
+      video.src = "https://emotion-detection-zg5o.onrender.com/video";
     }
   </script>
 </body>
